@@ -1,10 +1,10 @@
 import psycopg2
 
 # Configuración de la conexión a la base de datos
-DB_HOST = 'dpg-co7nn3a1hbls73ed3cr0-a.oregon-postgres.render.com'
-DB_NAME = 'odarusdb'
-DB_USER = 'odarus'
-DB_PASSWORD = 'Mn907bM0orDoDIO0yEQw0ZwxMSKbLLML'
+DB_HOST = 'dpg-co858v6n7f5s73fvcvug-a.oregon-postgres.render.com'
+DB_NAME = 'odenfisdb'
+DB_USER = 'odenfis'
+DB_PASSWORD = 'WDAT3G3NGCAfE3og0KjFTlifaiK9Rb21'
 
 def conectar_db():
     try:
