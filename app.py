@@ -37,9 +37,6 @@ def obtener_registros():
     conn.close()
     return registros
 
-
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
