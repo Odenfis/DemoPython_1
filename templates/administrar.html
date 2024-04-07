@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <a href="/" class="index-link">Retornar a pagina principal</a>
-        <h1>Administrar Registros de Personas</h1>
+        <h1>Administracion del Registro de Personal</h1>
         <table>
             <thead>
                 <tr>
@@ -30,8 +30,8 @@
                     <td>{{registro[4]}}</td>
                     <td>{{registro[5]}}</td>
                     <td>
-                        <form action="/eliminar/{{registro[1]}}" method="post">
-                            <button type="submit">Eliminar</button>
+                        <form id="eliminarForm{{ loop.index }}" action="/eliminar/{{registro[1]}}" method="post">
+                            <button type="button" data-index="{{ loop.index }}" onclick="confirmarEliminacion(this)" data-nombre="{{ registro[2] }}">Eliminar</button>
                         </form>
                     </td>                    
                 </tr>
@@ -39,5 +39,13 @@
             </tbody>
         </table>
     </div>
+    <script>
+        function confirmarEliminacion(button) {
+            var nombre = button.getAttribute('data-nombre');
+            var index = button.getAttribute('data-index');
+            if (confirm('¿Está seguro que desea eliminar el registro ' + nombre + ' indice(' + index + ')?')) {
+                document.getElementById('eliminarForm' + index).submit()
+        }}
+    </script>
 </body>
 </html>
