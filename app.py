@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask import jsonify
 import psycopg2
+import os
 
 app = Flask(__name__, template_folder='templates')
 
@@ -68,4 +69,6 @@ def eliminar_registro(dni):
     return redirect(url_for('administrar'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #Esto es nuevo
+    port = int(os.environ.get('PORT',5000))    
+    app.run(host='0.0.0.0', port=port, debug=True)
